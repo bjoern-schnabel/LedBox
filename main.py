@@ -14,7 +14,10 @@ pid = None
 def start_script():
     global pid 
     if(path is not None):
-        pid = subprocess.Popen(["sudo", "python3", path]).pid
+        try:
+            pid = subprocess.Popen(["sudo", "python3", path]).pid
+        except Exception as e:
+            print(f"Error starting script: {e}")
 
 # Function to stop the Python script
 def stop_script():
