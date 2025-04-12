@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import os
 
 depends = ["test.py", "ulib/fancy.py", "ulib/display.py"]
