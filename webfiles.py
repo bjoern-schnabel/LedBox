@@ -1,6 +1,6 @@
 import os
 
-depends = ["clear.py", "test.py", "ulib/fancy.py", "ulib/display.py"]
+depends = ["test.py", "ulib/fancy.py", "ulib/display.py"]
 
 def program_page(uname):
     """ This function creates the html code for a website which lets the user select a program from the 
