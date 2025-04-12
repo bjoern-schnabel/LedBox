@@ -1,6 +1,5 @@
-import display
+from ulib import display, fancy
 import time
-import fancy
 
 points = fancy.hilbert()
 print(points)

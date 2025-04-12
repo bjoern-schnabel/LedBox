@@ -1,6 +1,6 @@
 import os
 
-depends = ["test.py", "fancy.py", "display.py"]
+depends = ["clear.py", "test.py", "ulib/fancy.py", "ulib/display.py"]
 
 def program_page(uname):
     """ This function creates the html code for a website which lets the user select a program from the 
@@ -52,6 +52,7 @@ def program_page(uname):
             <label for="fileUpload">Upload a program:</label>
             <input type="file" id="fileUpload" name="file" accept=".py">
             <button type="submit" name="action" value="upload">Upload</button>
+            <button type="submit" name="action" value="lib_upload">Upload as library</button>
         </form>
     </body>
     </html>

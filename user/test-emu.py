@@ -1,6 +1,6 @@
-import display_emu as display
+from ulib import display_emu as display
+from ulib import fancy
 import time
-import fancy
 
 points = fancy.hilbert()
 print(points)

@@ -77,6 +77,18 @@ def home_action():
             os.makedirs(upload_folder, exist_ok=True)
             file_path = os.path.join(upload_folder, file.filename)
             file.save(file_path)
+    elif action == 'lib_upload':
+        if 'file' not in request.files:
+            return jsonify({'error': 'No file part in the request'}), 400
+        file = request.files['file']
+        if file.filename == '':
+            return jsonify({'error': 'No selected file'}), 400
+        if file:
+            upload_folder = os.path.join('./user', uname)
+            upload_folder = os.path.join(upload_folder, "lib")
+            os.makedirs(upload_folder, exist_ok=True)
+            file_path = os.path.join(upload_folder, file.filename)
+            file.save(file_path)
     elif action == 'download':
         program = data.get('program')
         if program is None:
