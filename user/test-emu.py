@@ -1,4 +1,4 @@
-import display
+import display_emu as display
 import time
 import fancy
 

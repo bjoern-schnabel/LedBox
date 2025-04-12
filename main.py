@@ -14,7 +14,7 @@ pid = None
 def start_script():
     global pid 
     if(path is not None):
-        pid = subprocess.Popen(["python3", path]).pid
+        pid = subprocess.Popen(["sudo python3", path]).pid
 
 # Function to stop the Python script
 def stop_script():
@@ -28,6 +28,7 @@ def stop_script():
         finally:
             # Reset pid to None after stopping
             pid = None
+    subprocess.Popen(["sudo python3", "user/clear.py"])
 
 @app.route('/')
 def index():
@@ -95,4 +96,4 @@ def home():
     return webfiles.program_page(uname)
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False)
+    app.run(host="0.0.0.0", port="80", debug=True, use_reloader=False)

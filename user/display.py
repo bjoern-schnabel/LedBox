@@ -17,7 +17,7 @@ def show():
     time.sleep(0.001)
 
 def set_xy(pixel: tuple, color: tuple):
-    pixels[map_pixel(pixel)] = color
+    pixels[map_pixel(pixel[0],pixel[1])] = color
 
 def set_i(pixel: int, color: tuple):
     pixels[pixel] = color
