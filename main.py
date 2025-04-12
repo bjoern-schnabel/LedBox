@@ -14,7 +14,7 @@ pid = None
 def start_script():
     global pid 
     if(path is not None):
-        pid = subprocess.Popen(["sudo python3", path]).pid
+        pid = subprocess.Popen(["sudo", "python3", path]).pid
 
 # Function to stop the Python script
 def stop_script():
@@ -28,7 +28,7 @@ def stop_script():
         finally:
             # Reset pid to None after stopping
             pid = None
-    subprocess.Popen(["sudo python3", "user/clear.py"])
+    subprocess.Popen(["sudo", "python3", "user/clear.py"])
 
 @app.route('/')
 def index():
