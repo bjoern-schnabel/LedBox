@@ -8,6 +8,7 @@ def program_page(uname):
     # Get the list of Python files in the user subdirectory
     user_subdirectory = "./user/" + uname
     os.makedirs(user_subdirectory, exist_ok=True)
+    os.makedirs(user_subdirectory+"/ulib", exist_ok=True)
     # Copy the "test.py" file to the user subdirectory
     for filename in depends:
         source_file = "./user/"+filename
