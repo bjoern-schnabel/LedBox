@@ -6,7 +6,7 @@ points = fancy.hilbert()
 print(points)
 
 display.fill((0,0,255))
-display.show()
+
 #while display.max_value()[1] > (1, 1, 1):
 for i in range(20):
 	display.fade((0.9, 0.9, 0.9))

@@ -24,7 +24,7 @@ def set_i(pixel: int, color: tuple):
 
 def set_m(pixel_list: list):
     for pixel in pixel_list:
-        pixels[map_pixel(pixel.x,pixel.y)] = pixel.rgb
+        pixels[map_pixel(pixel.x,pixel.y)] = pixel_list[pixel]
     show()
 
 def fill(color: tuple):

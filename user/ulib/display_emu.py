@@ -2,25 +2,32 @@ import time
 import cv2
 import numpy as np
 import math
+import matplotlib.pyplot as plt
+from PIL import Image
+from IPython.display import display, update_display, clear_output
 
 pixels = np.zeros((16, 16, 3), dtype=np.uint8)
 width = 16
 height = 16
 
+handle = None
+
 def brighten(v):
-    return 256 - 256/(v+1)
+    return 256 - 256/(float(v)+1)
 
 def show():
+    global handle
     accurate=pixels.copy()
     for i in range(len(pixels)):
         for j in range(len(pixels[i])):
             accurate[i][j] = (brighten(pixels[i][j][0]), brighten(pixels[i][j][1]), brighten(pixels[i][j][2]))
-    accurate = cv2.cvtColor(accurate, cv2.COLOR_RGB2BGR)
-    accurate = cv2.resize(accurate, (1024, 1024), interpolation=cv2.INTER_NEAREST)
-    cv2.imshow('Display', accurate)
+    #accurate = cv2.cvtColor(accurate, cv2.COLOR_RGB2BGR)
+    accurate = cv2.resize(accurate, (256, 256), interpolation=cv2.INTER_NEAREST)
+    img = Image.fromarray(accurate)
+
+    clear_output(wait=True) 
+    display(img, display_id=True)  # First time
     
-    cv2.resizeWindow('Display', 1024, 1024)
-    cv2.waitKey(1)
     time.sleep(0.001)
 
 def set_xy(pixel: tuple, color: tuple):
@@ -31,7 +38,7 @@ def set_xy(pixel: tuple, color: tuple):
 
 def set_m(pixel_list: list):
     for pixel in pixel_list:
-        pixels[pixel] = pixel.rgb
+        pixels[pixel] = pixel_list[pixel]
     show()
 
 def fill(color: tuple):

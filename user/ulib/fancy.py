@@ -1,6 +1,6 @@
 x, y, i = 0, 0, 0
 hilbert_a = [[0,0]]
-def hilbert():
+def hilbert(l):
     def hilbert_curve(level, dx, dy):
         global x, y, i, hilbert_a
         if level == 0:
@@ -38,4 +38,4 @@ def hilbert():
 
     hilbert_curve(4,1,0)
 
-    return hilbert_a
+    return hilbert_a[0:l]
