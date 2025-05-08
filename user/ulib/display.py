@@ -13,8 +13,8 @@ def map_pixel(x: int, y: int) -> int:
 		return(int(x*height/2+height-y-1))
       
 def show():
+    time.sleep(0.01)
     pixels.show()
-    time.sleep(0.001)
 
 def set_xy(pixel: tuple, color: tuple):
     pixels[map_pixel(pixel[0],pixel[1])] = color
