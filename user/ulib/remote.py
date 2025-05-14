@@ -17,7 +17,6 @@ def listen():
             s.bind(('', 5000))
             while True:
                 data, addr = s.recvfrom(1024)
-                print(f"Received packet from {addr}: {data.decode()}")
                 key = data.decode()
                 trigger_action(key)
 
